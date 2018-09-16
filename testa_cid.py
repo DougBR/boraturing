@@ -13,7 +13,8 @@ for column in X.columns:
 
 new_cids = clf.predict(X)
 
-pd.concat([X, new_cids], axis=1)
+df2 = pd.DataFrame(new_cids, ['cid' for i in range(len(new_cids))])
+X.add(df2)
+X.to_csv('cidsfound1_10000.csv', sep=',')
 
-X.to_csv('cidsfound1_10000', sep=',')
 #df1['e'] = Series(np.random.randn(sLength), index=df1.index)
