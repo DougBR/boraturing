@@ -16,7 +16,7 @@ for column in df.columns:
 X = df.drop('cid', axis=1)
 y = df['cid']
 del df
-file = open('Failed.py', 'w')
+file = open('traintestPoints.py', 'w')
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.8)
 print("Iniciando treinamento")
 file.write("X_train:\n"+ str(X_train))
@@ -47,7 +47,7 @@ finally:
 	print("Past prediction line")
 
 from sklearn.metrics import accuracy_score
-print("Acurácia Decision Tree (20% treinamento): ", accuracy_score(y_test, predictions))
+print("Accuracy Decision Tree (20% treinamento): ", accuracy_score(y_test, predictions))
 
 del predictions
 
