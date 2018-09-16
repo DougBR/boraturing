@@ -13,4 +13,5 @@ features_onerosas.append('id_beneficiario')
 clientes_de_interesse = df[features_onerosas]
 pd.merge(clientes_de_interesse, dataset_oneroso)
 fdm = df[df.id_beneficiario.isin(clientes_de_interesse.id_beneficiario)]
+return fdm
 
